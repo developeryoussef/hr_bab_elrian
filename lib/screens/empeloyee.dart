@@ -24,7 +24,7 @@ class EmpeloyeeCs extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height - 650;
     return StreamBuilder<QuerySnapshot>(
-        stream: FirebaseFirestore.instance.collection('empeloyee').snapshots(),
+        stream: FirebaseFirestore.instance.collection('empeloyees').snapshots(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(child: CircularProgressIndicator());

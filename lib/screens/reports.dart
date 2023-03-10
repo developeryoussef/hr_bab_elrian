@@ -128,8 +128,13 @@ class REPORTSTextField extends StatelessWidget {
           padding: const EdgeInsets.all(15),
           child: TextFormField(
             controller: controller,
-            decoration:
-                InputDecoration(hintText: hintText, border: InputBorder.none),
+            decoration: InputDecoration(
+                
+                  hintText: hintText,
+                  border: InputBorder.none,
+                  hintStyle: TextStyle(
+                    height: 1,
+                  ))
             minLines: 1,
             maxLines: maxlines,
           ),

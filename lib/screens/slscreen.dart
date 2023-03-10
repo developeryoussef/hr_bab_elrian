@@ -185,7 +185,7 @@ class SIGNUP extends StatelessWidget {
               textEditingController: controller.signUpSpecController,
               hint: 'spec'.tr,
               obscureText: false,
-              keyboardType: TextInputType.number,
+              keyboardType: TextInputType.text,
               
             ),
             AuthTextFormField(
@@ -249,6 +249,7 @@ class AuthTextFormField extends StatelessWidget {
               obscureText: obscureText!,
               keyboardType: keyboardType,
               decoration: InputDecoration(
+                
                   hintText: hint,
                   border: InputBorder.none,
                   hintStyle: TextStyle(

@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, await_only_futures, file_names, unused_import, unused_field, use_key_in_widget_constructors, unused_local_variable, avoid_unnecessary_containers, unnecessary_brace_in_string_interps, sort_child_properties_last, prefer_const_constructors_in_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, await_only_futures, file_names, unused_import, unused_field, use_key_in_widget_constructors, unused_local_variable, avoid_unnecessary_containers, unnecessary_brace_in_string_interps, sort_child_properties_last, prefer_const_constructors_in_immutables, duplicate_import
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hr_bab_elrian/screens/empeloyee.dart';
@@ -48,6 +48,7 @@ class ChatsS extends StatelessWidget {
 }
 
 class DocOrEm extends StatelessWidget {
+  
   const DocOrEm({
     Key? key,
     required this.isDoctor,
@@ -57,6 +58,7 @@ class DocOrEm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return isDoctor == true ? DoctorCs() : EmpeloyeeCs();
   }
 }
