@@ -210,49 +210,53 @@ class Trep extends StatelessWidget {
             child: ListView(
                               children: snapshot.data!.docs
                                   .map((DocumentSnapshot documentSnapshot) {
-                                return Material(
-                                  color: Colors.blueGrey,
-                                  child: Padding(
-                                    child: Column(
-                                      children: [
-                                        ListTile(
-                                         title: Text('doctor name: ${documentSnapshot['doctor name']}' , style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.white,
-                                         ),), 
-                                        ),
-                                        ListTile(
-                                         title: Text('doctor specialty: ${documentSnapshot['doctor specialty']}' , style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.white,
-                                         ),), 
-                                        ),
-                                        ListTile(
-                                         title: Text('doctor addres" ${documentSnapshot['doctor addres']}' , style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.white,
-                                         ),), 
-                                        ),
-                                        ListTile(
-                                         title: Text('visitreason: ${documentSnapshot['visit reason']}' , style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.white,
-                                         ),), 
-                                        ),
-                                         ListTile(
-                                         title: Text('phone: ${documentSnapshot['doctor phone number']}' , style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.white,
-                                         ),), 
-                                        ),
-                                      ],
-                                    ),
-                                    padding: EdgeInsets.all(30)),
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Material(
+                                    borderRadius: BorderRadius.circular(25),
+                                    color: Colors.blueGrey,
+                                    child: Padding(
+                                      child: Column(
+                                        children: [
+                                          ListTile(
+                                           title: Text('doctor name: ${documentSnapshot['doctor name']}' , style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.white,
+                                           ),), 
+                                          ),
+                                          ListTile(
+                                           title: Text('doctor specialty: ${documentSnapshot['doctor specialty']}' , style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.white,
+                                           ),), 
+                                          ),
+                                          ListTile(
+                                           title: Text('doctor addres" ${documentSnapshot['doctor addres']}' , style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.white,
+                                           ),), 
+                                          ),
+                                          ListTile(
+                                           title: Text('visitreason: ${documentSnapshot['visit reason']}' , style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.white,
+                                           ),), 
+                                          ),
+                                           ListTile(
+                                           title: Text('phone: ${documentSnapshot['doctor phone number']}' , style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.white,
+                                           ),), 
+                                          ),
+                                        ],
+                                      ),
+                                      padding: EdgeInsets.all(30)),
+                                  ),
                                 );
 
                               }).toList(),

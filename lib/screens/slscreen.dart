@@ -79,11 +79,12 @@ class SLScreen extends StatelessWidget {
               ),
             ),
             onPressed: () async {
-              var res = await controller.signUp(context);
+              
+              
+              if (controller.imageurl != null) {
+                var res = await controller.signUp(context);
 
               Get.to(ChatsS());
-              
-              if (controller.signUpGmailController != null || controller.signUpPasswordController != null) {
                 await FirebaseFirestore.instance
                   .collection('${FirebaseAuth.instance.currentUser?.uid}')
                   .add({
@@ -94,6 +95,11 @@ class SLScreen extends StatelessWidget {
                 'imageurl': controller.imageurl,
                 'docorbi': isDOCTOR,
               });
+              }
+              else if(controller.imageurl == null){
+                Get.defaultDialog(
+                  middleText: 'Please put the profile image',
+                );
               }
             },
           ),
