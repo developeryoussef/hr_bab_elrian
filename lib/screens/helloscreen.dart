@@ -38,8 +38,7 @@ class HelloPage extends StatelessWidget {
             Center(
               child: Padding(
                 padding: const EdgeInsets.all(40),
-                child: Image.network(
-                    'https://scontent.xx.fbcdn.net/v/t1.15752-9/333406371_5929157753834123_1576795792319023917_n.jpg?stp=dst-jpg_p403x403&_nc_cat=111&ccb=1-7&_nc_sid=aee45a&_nc_ohc=HPDDDoe9Q1UAX-EJgRd&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdQfE1yxMn85bGu5gPTJeAwpGWnbQHgDg6SElQtoFhX7Jw&oe=642B999E'),
+                child: Image.asset('asset/logo.jpg'),
               ),
             ),
             SizedBox(

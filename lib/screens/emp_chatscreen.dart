@@ -75,7 +75,7 @@ class EchatScreen extends StatelessWidget {
 
 class EChatTextField extends StatefulWidget {
   final dynamic? did;
-  const EChatTextField({required this.did});
+  EChatTextField({required this.did});
 
   @override
   State<EChatTextField> createState() => _EChatTextFieldState();
@@ -108,17 +108,14 @@ class _EChatTextFieldState extends State<EChatTextField> {
                     Expanded(
                       flex: 3,
                       child: TextFormField(
+                        
                         minLines: 1,
                         maxLines: 100,
                         onChanged: (message) {
                           controller.message = message;
                         },
                         controller: controller.controller,
-                        decoration: InputDecoration(
-                            hintText: 'message',
-                            border: InputBorder.none,
-                            hintStyle:
-                                TextStyle(height: 4, color: Colors.black)),
+                        
                       ),
                     ),
                     Expanded(

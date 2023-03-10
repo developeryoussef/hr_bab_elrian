@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables, unnecessary_brace_in_string_interps
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables, unnecessary_brace_in_string_interps, use_key_in_widget_constructors
 
 import 'dart:io';
 import 'dart:math';
@@ -72,8 +72,8 @@ class TchatScreen extends StatelessWidget {
 }
 
 class ChatTextField extends StatefulWidget {
-  final dynamic? did;
-  const ChatTextField({required this.did});
+  final dynamic did;
+  ChatTextField({required this.did});
 
   @override
   State<ChatTextField> createState() => _ChatTextFieldState();
@@ -119,12 +119,8 @@ class _ChatTextFieldState extends State<ChatTextField> {
                             controller.message = message;
                           },
                           controller: controller.controller,
-                          decoration: InputDecoration(
-                            hintText: 'message',
-                            border: InputBorder.none,
-                            hintStyle:
-                                TextStyle(height: 4, color: Colors.black),
-                          ),
+                          
+                          
                         ),
                       ]),
                     ),
