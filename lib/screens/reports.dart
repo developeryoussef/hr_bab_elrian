@@ -38,7 +38,7 @@ class ReportsS extends StatelessWidget {
               height: 50,
               child: Center(
                 child: Text(
-                  'sgn'.tr,
+                  'reports',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w700,
