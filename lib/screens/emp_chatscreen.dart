@@ -106,9 +106,12 @@ class _EChatTextFieldState extends State<EChatTextField> {
                 child: Row(
                   children: [
                     Expanded(
-                      flex: 3,
+                      flex: 5,
                       child: TextFormField(
-                        
+
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                        ),
                         minLines: 1,
                         maxLines: 100,
                         onChanged: (message) {

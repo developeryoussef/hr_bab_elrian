@@ -43,7 +43,7 @@ class SLScreen extends StatelessWidget {
                     end: Alignment.bottomRight,
                     stops: [0, 0.2, 0.5, 0.8]),
               ),
-              child: SIGNUP(),
+              child: SIGNUP(doc: isDOCTOR),
               width: width,
               height: 475,
             ),
@@ -120,6 +120,10 @@ class SLScreen extends StatelessWidget {
 }
 
 class SIGNUP extends StatelessWidget {
+  final dynamic doc;
+  SIGNUP({
+    required this.doc
+  });
   @override
   Widget build(BuildContext context) {
     AuthController controller = Get.put(AuthController());
@@ -178,7 +182,7 @@ class SIGNUP extends StatelessWidget {
                 controller.signUpPhone = text;
               },
             ),
-            AuthTextFormField(
+            doc == true ? AuthTextFormField(
               onSaved: (p0) {
                 
               },
@@ -187,7 +191,7 @@ class SIGNUP extends StatelessWidget {
               obscureText: false,
               keyboardType: TextInputType.text,
               
-            ),
+            ) :
             AuthTextFormField(
               textEditingController: controller.signUpIDNController,
               hint: 'idn'.tr,

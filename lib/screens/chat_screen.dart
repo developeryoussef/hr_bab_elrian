@@ -107,8 +107,11 @@ class _ChatTextFieldState extends State<ChatTextField> {
                       flex: 3,
                       child: ListView(children: [
                         TextFormField(
+                          decoration: InputDecoration(
+                          border: InputBorder.none,
+                        ),
                           maxLines: 100,
-                          // minLines: 2,
+                          minLines: 1,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter some text';
