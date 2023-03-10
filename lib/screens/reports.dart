@@ -29,7 +29,43 @@ class ReportsS extends StatelessWidget {
         builder: (controller) {
           return Column(
             children: [
-              Bar(),
+              Bar(
+
+              ),
+              MaterialButton(
+            child: Container(
+              width: 400,
+              height: 50,
+              child: Center(
+                child: Text(
+                  'sgn'.tr,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                gradient: LinearGradient(
+                    colors: [
+                      Color.fromARGB(255, 27, 112, 197),
+                      Color.fromARGB(255, 38, 124, 204),
+                      Color.fromARGB(255, 56, 132, 172),
+                      Color.fromARGB(255, 66, 137, 156)
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    stops: [0, 0.2, 0.5, 0.8]),
+              ),
+            ),
+            onPressed: () async {
+
+              Get.to(Trep());
+              
+              
+              
+            },),
               REPORTSTextField(
                 controller: controller.doctorName,
                 hintText: 'doctor name',
@@ -98,6 +134,7 @@ class ReportsS extends StatelessWidget {
                       'visit reason': controller.doctorVisitResult!.text,
                       'doctor phone number': controller.doctorPhoneNumber!.text,
                     });
+                  
                     print(controller.doctorAddres!.text);
                   },
                 ),
@@ -134,7 +171,7 @@ class REPORTSTextField extends StatelessWidget {
                   border: InputBorder.none,
                   hintStyle: TextStyle(
                     height: 1,
-                  ))
+                  )),
             minLines: 1,
             maxLines: maxlines,
           ),
@@ -146,6 +183,88 @@ class REPORTSTextField extends StatelessWidget {
               BoxShadow(color: Colors.black.withOpacity(0.4), blurRadius: 7),
             ]),
       ),
+    );
+  }
+}
+
+class Trep extends StatelessWidget {
+  const Trep({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('rep'.tr),
+      ),
+      body: StreamBuilder(
+        stream: FirebaseFirestore.instance.collection('reports').doc(FirebaseAuth.instance.currentUser?.uid)
+                        .collection('reports').snapshots(),
+        builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          else if(snapshot.hasData){
+          return Container(
+            child: ListView(
+                              children: snapshot.data!.docs
+                                  .map((DocumentSnapshot documentSnapshot) {
+                                return Material(
+                                  color: Colors.blueGrey,
+                                  child: Padding(
+                                    child: Column(
+                                      children: [
+                                        ListTile(
+                                         title: Text('doctor name: ${documentSnapshot['doctor name']}' , style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.white,
+                                         ),), 
+                                        ),
+                                        ListTile(
+                                         title: Text('doctor specialty: ${documentSnapshot['doctor specialty']}' , style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.white,
+                                         ),), 
+                                        ),
+                                        ListTile(
+                                         title: Text('doctor addres" ${documentSnapshot['doctor addres']}' , style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.white,
+                                         ),), 
+                                        ),
+                                        ListTile(
+                                         title: Text('visitreason: ${documentSnapshot['visit reason']}' , style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.white,
+                                         ),), 
+                                        ),
+                                         ListTile(
+                                         title: Text('phone: ${documentSnapshot['doctor phone number']}' , style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.white,
+                                         ),), 
+                                        ),
+                                      ],
+                                    ),
+                                    padding: EdgeInsets.all(30)),
+                                );
+
+                              }).toList(),
+                            ),
+                            
+          );
+          
+          }
+          return Center(
+            child: Text('There isn\'t any reports'),
+          );
+      },),
     );
   }
 }
