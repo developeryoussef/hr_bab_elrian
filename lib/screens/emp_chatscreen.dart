@@ -55,7 +55,7 @@ class EchatScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
                 Expanded(
-                  flex: 3,
+                  flex: 5,
                   child: EChatTextField(
                     did: did,
                   ),
@@ -111,7 +111,9 @@ class _EChatTextFieldState extends State<EChatTextField> {
 
                         decoration: InputDecoration(
                           border: InputBorder.none,
+                          hintText: 'message',
                         ),
+                        
                         minLines: 1,
                         maxLines: 100,
                         onChanged: (message) {

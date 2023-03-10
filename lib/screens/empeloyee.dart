@@ -82,8 +82,8 @@ class Bar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 35, bottom: 10, left: 20, right: 20),
-      height: MediaQuery.of(context).size.height - 650,
+      padding: EdgeInsets.only(top: 25, bottom: 10, left: 20, right: 20),
+      height: MediaQuery.of(context).size.height - 660,
       child: ListView(
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

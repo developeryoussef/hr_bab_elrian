@@ -140,8 +140,8 @@ class   DocBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 35, bottom: 10, left: 20, right: 20),
-      height: MediaQuery.of(context).size.height - 650,
+      padding: EdgeInsets.only(top: 24, bottom: 10, left: 20, right: 20),
+      height: MediaQuery.of(context).size.height - 660,
       child: ListView(
         children: [
           Row(
@@ -150,7 +150,7 @@ class   DocBar extends StatelessWidget {
                 'Bab Elrian hr',
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 27.5,
+                    fontSize: 24.6,
                     fontWeight: FontWeight.bold),
               ),
               Spacer(),
