@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1072520543866",
+    "project_id": "hrbabelrian",
+    "storage_bucket": "hrbabelrian.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072520543866:android:8aba8375d19558424d05c3",
+        "android_client_info": {
+          "package_name": "com.example.hr_bab_elrian"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1072520543866-3jr3mtf4gb7d2dpjv69cl4c56n2d6rcf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzFBGN5bv2s8ky-QJopwMJnbMv0pmnCmg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1072520543866-3jr3mtf4gb7d2dpjv69cl4c56n2d6rcf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
